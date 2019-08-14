@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 6</title>
+</head>
+
+<body>
+    <div id="root">
+        <label for="input-text">Enter Text: </label>
+        <input type="text" name="one" id="input-text">
+        <label for="input-number">Enter Number: </label>
+        <input type="number" name="one" id="input-number">
+        <input type="button" value="Multiply" id="btn">
+        <div id="list">
+            <ul id="ul">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        let ul = document.querySelector('#ul');
+        let inputText = document.querySelector('#input-text');
+        let inputNumber = document.querySelector('#input-number');
+        let btn = document.querySelector('#btn');
+
+        function addListItems() {
+            for (let i = 0; i < inputNumber.value; i++) {
+                let li = document.createElement('li');
+                let textNode = document.createTextNode(`${inputText.value}`);
+
+                li.appendChild(textNode);
+                ul.appendChild(li);
+            }
+        }
+
+        btn.addEventListener('click', addListItems);
+        // Make a website with a text input, a number input and a button. 
+        // Clicking on the button should add that many copies of the text 
+        // in the text input to a list.
+    </script>
+</body>
+
+</html>

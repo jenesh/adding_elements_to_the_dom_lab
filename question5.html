@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 5</title>
+</head>
+
+<body>
+    <div id="div-input">
+        <input type="text" name="list" id="input">
+        <input type="button" value="Add to list" id="btn">
+    </div>
+    <div id="div-list">
+
+    </div>
+
+    <script>
+        // Make a website with a text input and a button. 
+        // Clicking on the button should create a new list item 
+        // with its text the same as the text in the input.
+        let ul = document.createElement('ul');
+        let div = document.querySelector('#div-list');
+        div.appendChild(ul);
+        let input = document.querySelector('input');
+        let btn = document.querySelector("#btn");
+        
+        function addToList() {
+            console.log(input.value)
+            let li = document.createElement('li');
+            let textNode = document.createTextNode(`${input.value}`);
+
+            li.appendChild(textNode);
+            ul.appendChild(li);
+        }
+
+        btn.addEventListener('click', addToList);        
+
+    </script>
+</body>
+
+</html>

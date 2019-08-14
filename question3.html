@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 3</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        let ul = document.createElement('ul');
+        let root = document.querySelector('#root');
+        root.appendChild(ul);
+
+        let arr = [
+            {
+                gender: "female",
+                name: {
+                    title: "miss",
+                    first: "alberte",
+                    last: "larsen"
+                },
+                nat: "DK"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "hugo",
+                    last: "morris"
+                },
+                nat: "NZ"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "hüseyin",
+                    last: "merten"
+                },
+                nat: "DE"
+            },
+            {
+                gender: "female",
+                name: {
+                    title: "mrs",
+                    first: "delores",
+                    last: "bell"
+                },
+                nat: "US"
+            },
+            {
+                gender: "female",
+                name: {
+                    title: "ms",
+                    first: "caroline",
+                    last: "turner"
+                },
+                nat: "IE"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "emile",
+                    last: "tremblay"
+                },
+                nat: "CA"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "mario",
+                    last: "kim"
+                },
+                nat: "US"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "veeti",
+                    last: "erkkila"
+                },
+                nat: "FI"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "danny",
+                    last: "rogers"
+                },
+                nat: "AU"
+            },
+            {
+                gender: "male",
+                name: {
+                    title: "mr",
+                    first: "jeppe",
+                    last: "larsen"
+                },
+                nat: "DK"
+            }
+        ];
+
+
+        console.log(arr);
+
+        arr.forEach(ele => {
+            let li = document.createElement('li')
+            let textNode = document.createTextNode(
+                `(${ele.gender[0].toUpperCase()}) ` +
+                `${ele.name.first[0].toUpperCase() + ele.name.first.slice(1)}, ` +
+                `${ele.name.last[0].toUpperCase() + ele.name.last.slice(1)}, ` +
+                `${ele.nat}`);
+
+            // console.log(ele.name.first)
+
+            li.appendChild(textNode);
+            ul.appendChild(li);
+        })
+    </script>
+</body>
+
+</html>

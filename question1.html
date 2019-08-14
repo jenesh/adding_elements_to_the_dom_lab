@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Question 1</title>
+  </head>
+  <body>
+    <h1 id="h1">Change Me</h1>
+    <input type="text" name="one" id="input">
+    <input type="button" value="Change Heading" id="btn" onclick="change()">
+
+    <script>
+      let input = document.querySelector('#input')
+      let h1 = document.querySelector('#h1')
+
+      function change() {
+        h1.innerHTML = input.value;
+      }
+
+    </script>
+  </body>
+</html>

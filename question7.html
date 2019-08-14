@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 7</title>
+</head>
+
+<body>
+    <div id="root">
+        <label for="input-num">Enter Number: </label>
+        <input type="number" name="one" id="input-num">
+        <input type="button" value="Calculate" id="btn">
+
+        <div id="results">
+            <h3>Numbers Inputted: </h3>
+            <ul id="list-items"></ul>
+            <h3>Calculated Numbers: </h3>
+            <p id="p1"></p>
+            <p id="p2"></p>
+            <p id="p3"></p>
+        </div>
+    </div>
+    <script>
+        let inputNum = document.querySelector('#input-num');
+        let btn = document.querySelector('#btn');
+        let resultsDiv = document.querySelectorAll('p');
+        let listItems = document.querySelector('#list-items');
+
+        function calculate() {
+            let num = inputNum.value;
+            let li = document.createElement('li');
+            let textNode = document.createTextNode(`${num}`);
+            li.appendChild(textNode);
+            listItems.appendChild(li);
+
+            let numberList = document.querySelectorAll('li');
+
+            numberList.forEach(ele => console.dir(ele));
+
+            let numHistoryArr = [];
+            numberList.forEach(ele => numHistoryArr.push(Number(ele.innerText)));
+            // console.log('Num History: ', numHistoryArr)
+
+            let resultsArr = [
+                `Average: ${numHistoryArr.reduce((acc, num) => num + acc, 0) / numberList.length}`,
+                `Max: ${numHistoryArr.reduce((acc, num) => num > acc ? num : acc, -Infinity)}`,
+                `Min: ${numHistoryArr.reduce((acc, num) => num < acc ? num : acc, Infinity)}`
+            ];
+
+            console.log(resultsArr);
+
+            for (let i = 0; i < numberList.length; i++) {
+                numberList.innerText = resultsArr[i];
+            }
+        }
+
+        btn.addEventListener('click', calculate);
+
+        //Make a website with a number input, a button, and 3 paragraphs. 
+        // Clicking on the button should add the number to a list. The first 
+        // paragraph should show the average of all the numbers, the second 
+        // paragraph should show the maximum value, and the third paragraph 
+        // should show the minimum value.
+    </script>
+</body>
+
+</html>
