@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 10</title>
+</head>
+
+<body>
+    <div id="root">
+        <h1 id="heading">Never, say never!</h1>
+        <input type="number" name="q" id="input-number">
+        <input type="button" value="Change Heading Size Above" id="btn">
+    </div>
+    <script>
+        // Make a website with a number input, a heading and a button. 
+        // Clicking on the button should replace the heading with a heading 
+        // matching the number in the input. (e.g Entering 4 into the number 
+        // input should turn the heading into <h4>)
+
+        let btn = document.querySelector('#btn');
+
+        function change() {
+            let hTag = document.querySelector('#heading');
+            let parentHTag = hTag.parentNode;
+            let input = document.querySelector('#input-number');
+            
+            // let headingString = hTag.outerHTML.toString();
+            // headingString = headingString.replace(/<\s*h[^>]*>/g, `<h${input.value} id="#heading">`);
+            // headingString = headingString.replace(/<\/s*h[^>]*>/g, `</h${input.value}>`);
+            // parentHTag.replaceChild(headingString, hTag);
+
+            let newHeading = document.createElement(`h${input.value}`);
+            let newText = document.createTextNode(`${hTag.innerHTML}`);
+
+            newHeading.appendChild(newText);
+            newHeading.setAttribute('id', hTag.id);
+            hTag.parentNode.replaceChild(newHeading, hTag);
+        }
+
+        btn.addEventListener('click', change);
+
+    </script>
+</body>
+
+</html>

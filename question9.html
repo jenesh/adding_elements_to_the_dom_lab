@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 9</title>
+</head>
+
+<body>
+    <div id="root">
+        <input type="button" value="Yes" id="btn">
+        <p>Do</p>
+        <p>You</p>
+        <p>Believe</p>
+        <p>In</p>
+        <p>Magic?</p>
+    </div>
+    <script>
+        // Make a website with a button, and 5 paragraph tags. Clicking on 
+        // the button should remove all of the paragraphs.
+        let btn = document.querySelector('#btn');
+        let p = document.querySelectorAll('p');
+
+        function magicc() {
+            p.forEach(ele => {
+                ele.parentNode.removeChild(ele);
+            })
+            btn.value = 'Good Answer';
+        }
+
+        btn.addEventListener('click', magicc);
+
+    </script>
+</body>
+
+</html>

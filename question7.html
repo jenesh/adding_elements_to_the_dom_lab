@@ -15,12 +15,12 @@
         <input type="button" value="Calculate" id="btn">
 
         <div id="results">
-            <h3>Numbers Inputted: </h3>
-            <ul id="list-items"></ul>
-            <h3>Calculated Numbers: </h3>
+            <h3>Calculations: </h3>
             <p id="p1"></p>
             <p id="p2"></p>
             <p id="p3"></p>
+            <h3>Number History: </h3>
+            <ul id="list-items"></ul>
         </div>
     </div>
     <script>
@@ -52,8 +52,8 @@
 
             console.log(resultsArr);
 
-            for (let i = 0; i < numberList.length; i++) {
-                numberList.innerText = resultsArr[i];
+            for (let i = 0; i < resultsDiv.length; i++) {
+                resultsDiv[i].innerText = resultsArr[i];
             }
         }
 
